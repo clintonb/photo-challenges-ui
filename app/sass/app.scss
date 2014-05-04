@@ -1,0 +1,24 @@
+@import 'lazy';
+
+.challenges {
+  .challenge {
+
+    .counts {
+      .vote-link {
+        color: inherit;
+        display: block;
+
+        &.voted {
+          color: #d9534f;
+        }
+      }
+    }
+
+    .detail {
+    }
+  }
+}
+
+img.photo {
+  max-width: 100%;
+}
