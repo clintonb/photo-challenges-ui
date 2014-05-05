@@ -119,4 +119,26 @@ describe('controllers', function () {
       sharedBehaviorForDailyChallengeRetrieval(context);
     });
   });
+
+  describe('DailyChallengeListCtrl', function () {
+    var scope, ctrl, $httpBackend;
+    var data = [{"id":1,"created_at":"2014-04-18T04:00:00.000Z","challenge":{"id":23,"created_at":"2014-04-19T00:03:49.595Z","description":"Et non repellat debitis.","daily_challenge_date":"2014-04-18T04:00:00.000Z","user":{"id":4,"display_name":"dane.anderson"},"photos":{"count":2,"links":[{"id":27,"url":"http://lorempixel.com/640/480/?9391","user":{"id":8,"display_name":"justus"}},{"id":394,"url":"http://lorempixel.com/640/480/?5305","user":{"id":16,"display_name":"maryjane"}}]}}},{"id":2,"created_at":"2014-04-17T04:00:00.000Z","challenge":{"id":21,"created_at":"2014-04-19T00:03:49.592Z","description":"Optio quae voluptas sint et harum nostrum adipisci iure.","daily_challenge_date":"2014-04-17T04:00:00.000Z","user":{"id":4,"display_name":"dane.anderson"},"photos":{"count":5,"links":[{"id":59,"url":"http://lorempixel.com/640/480/?9934","user":{"id":16,"display_name":"maryjane"}},{"id":131,"url":"http://lorempixel.com/640/480/?5788","user":{"id":1,"display_name":"ccb621"}},{"id":310,"url":"http://lorempixel.com/640/480/?4604","user":{"id":12,"display_name":"derek"}},{"id":362,"url":"http://lorempixel.com/640/480/?7044","user":{"id":10,"display_name":"litzy.hegmann"}},{"id":400,"url":"http://lorempixel.com/640/480/?3786","user":{"id":14,"display_name":"eusebio_barton"}}]}}}];
+
+    beforeEach(inject(function (_$httpBackend_, $rootScope, $controller) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('http://localhost:3000/daily-challenges.json').
+          respond(data);
+
+      scope = $rootScope.$new();
+      ctrl = $controller('DailyChallengeListCtrl', {$scope: scope});
+    }));
+
+
+    it('should create "challenges" model with 2 challenges fetched from xhr', function () {
+      expect(scope.daily_challenges).toEqualData([]);
+      $httpBackend.flush();
+
+      expect(scope.daily_challenges).toEqualData(data);
+    });
+  });
 });

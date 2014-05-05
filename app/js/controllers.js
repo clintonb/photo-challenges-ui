@@ -22,3 +22,7 @@ controllers.controller('DailyChallengeDetailCtrl', ['$scope', '$routeParams', 'D
     $scope.challenge = daily_challenge.challenge;
   });
 }]);
+
+controllers.controller('DailyChallengeListCtrl', ['$scope', 'DailyChallenge', function ($scope, DailyChallenge) {
+  $scope.daily_challenges = DailyChallenge.query();
+}]);
