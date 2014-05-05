@@ -14,5 +14,11 @@ controllers.controller('ChallengeDetailCtrl', ['$scope', '$routeParams', 'Challe
 }]);
 
 controllers.controller('ChallengeCreateCtrl', ['$scope', '$routeParams', 'Challenge', function($scope, $routeParams, Challenge) {
-//  $scope.challenge = Challenge.get({id: $routeParams.id}, function(challenge) { });
+  $scope.save = function(challenge) {
+    Challenge.save(challenge)
+  };
+
+  $scope.cancel = function() {
+    window.history.back();
+  }
 }]);
