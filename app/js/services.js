@@ -9,3 +9,9 @@ services.factory('Challenge', ['$resource',
     return $resource('http://localhost:3000/challenges/:id.json');
   }
 ]);
+
+services.factory('DailyChallenge', ['$resource',
+  function ($resource) {
+    return $resource('http://localhost:3000/daily-challenges/:id.json');
+  }
+]);
