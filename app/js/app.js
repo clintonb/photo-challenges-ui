@@ -3,6 +3,7 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('photoChallenges', [
+  'mgcrea.ngStrap',
   'ngRoute',
   'photoChallenges.filters',
   'photoChallenges.services',

@@ -1,4 +1,8 @@
-@import 'lazy';
+@import "lazy";
+@import "variables";
+@import "mixins";
+@import "footer";
+
 
 .challenges {
   .challenge {
