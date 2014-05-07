@@ -1,9 +1,10 @@
-module.exports = function(config){
+module.exports = function (config) {
   config.set({
 
-    basePath : '../',
+    basePath: '../',
 
-    files : [
+    files: [
+      'app/bower_components/jquery/dist/jquery.min.js',
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
@@ -11,23 +12,33 @@ module.exports = function(config){
       'app/bower_components/angular-strap/dist/angular-strap.min.js',
       'app/bower_components/angular-strap/dist/angular-strap.tpl.min.js',
       'app/js/**/*.js',
+      'app/partials/**/*.html',
       'test/unit/**/*.js'
     ],
 
-    autoWatch : true,
+    preprocessors: {
+      'app/partials/**/*.html': 'ng-html2js'
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/'
+    },
+
+    autoWatch: true,
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers: ['Chrome'],
 
-    plugins : [
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-jasmine',
-            'karma-junit-reporter'
-            ],
+    plugins: [
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-jasmine',
+      'karma-junit-reporter',
+      'karma-ng-html2js-preprocessor'
+    ],
 
-    junitReporter : {
+    junitReporter: {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
     }
