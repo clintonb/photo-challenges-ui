@@ -164,7 +164,7 @@ describe('directives', function () {
     describe('without photos', function () {
       it('displays an empty alert', function () {
         var element = createGrid([]).find('.alert-info');
-        expect(element.text().trim()).toEqual('No photos have been posted for this challenge.');
+        expect(element.text().trim()).toEqual('No photos have been posted.');
       });
     });
   });

@@ -15,3 +15,9 @@ services.factory('DailyChallenge', ['$resource',
     return $resource('http://localhost:3000/daily-challenges/:id.json');
   }
 ]);
+
+services.factory('Photo', ['$resource',
+  function ($resource) {
+    return $resource('http://localhost:3000/photos/:id.json', {}, {'query': {method: 'GET', isArray: false}, 'get': {method: 'GET'} });
+  }
+]);

@@ -26,3 +26,12 @@ controllers.controller('DailyChallengeDetailCtrl', ['$scope', '$routeParams', 'D
 controllers.controller('DailyChallengeListCtrl', ['$scope', 'DailyChallenge', function ($scope, DailyChallenge) {
   $scope.daily_challenges = DailyChallenge.query();
 }]);
+
+controllers.controller('PhotoListCtrl', ['$scope', 'Photo', function ($scope, Photo) {
+  $scope.photos = Photo.query();
+}]);
+
+controllers.controller('PhotoDetailCtrl', ['$scope', '$routeParams', 'Photo', function ($scope, $routeParams, Photo) {
+  $scope.photo = Photo.get({id: $routeParams.id}, function (photo) {
+  });
+}]);

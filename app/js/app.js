@@ -16,5 +16,7 @@ angular.module('photoChallenges', [
   $routeProvider.when('/daily-challenges', {templateUrl: 'partials/challenge-detail.html', controller: 'DailyChallengeDetailCtrl'});
   $routeProvider.when('/daily-challenges/all', {templateUrl: 'partials/daily_challenge-list.html', controller: 'DailyChallengeListCtrl'});
   $routeProvider.when('/daily-challenges/:id', {templateUrl: 'partials/challenge-detail.html', controller: 'DailyChallengeDetailCtrl'});
+  $routeProvider.when('/photos', {templateUrl: 'partials/photo-list.html', controller: 'PhotoListCtrl'});
+  $routeProvider.when('/photos/:id', {templateUrl: 'partials/photo-detail.html', controller: 'PhotoDetailCtrl'});
   $routeProvider.otherwise({redirectTo: '/daily-challenges'});
 }]);
