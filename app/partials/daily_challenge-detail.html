@@ -16,7 +16,7 @@
 
 <div class="row" ng-if="challenge.photos.links.length > 0">
   <div class="col-xs-3" ng-repeat="photo in challenge.photos.links">
-    <a href="#/photos/{{photo.id}}" class="thumbnail"><img src="{{photo.url}}"/> </a>
+    <a href="#/photos/{{photo.id}}" class="thumbnail"><img ng-src="{{photo.url}}"/> </a>
   </div>
 </div>
 
