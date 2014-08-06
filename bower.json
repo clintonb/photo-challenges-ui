@@ -11,7 +11,7 @@
     "angular-loader": "1.2.x",
     "angular-mocks": "~1.2.x",
     "angular-resource": "~1.2.x",
-    "bootstrap": "~>3.1.1",
+    "bootstrap": "~>3.2.0",
     "fontawesome": "~>4.0.3",
     "angular-strap": "~>2.0.2"
   },
